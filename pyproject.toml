@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "turing-foundation"
+version = "0.1.0"
+description = "TURING-1: arquitectura híbrida conv/atención + MoE fino + MTP en PyTorch puro (base LFM2)"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = ["torch>=2.4"]
+
+[project.optional-dependencies]
+dev = []
+
+[tool.setuptools.packages.find]
+include = ["turing", "lfm2"]
