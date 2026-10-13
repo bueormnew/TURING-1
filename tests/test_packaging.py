@@ -97,9 +97,22 @@ def test_v6_layout():
     print("OK V6: layout exportable + notebook válido")
 
 
+def test_v7_license():
+    with open(os.path.join(ROOT, "LICENSE"), encoding="utf-8") as f:
+        lic = f.read()
+    assert "Apache License" in lic and "Version 2.0" in lic, "LICENSE no es Apache-2.0"
+    with open(os.path.join(ROOT, "README.md"), encoding="utf-8") as f:
+        assert "Apache-2.0" in f.read(), "README no menciona la licencia"
+    import tomllib
+    with open(os.path.join(ROOT, "pyproject.toml"), "rb") as f:
+        assert tomllib.load(f)["project"]["license"]["text"] == "Apache-2.0"
+    print("OK V7: LICENSE Apache-2.0 + README + pyproject")
+
+
 if __name__ == "__main__":
     suite = [test_v1_version, test_v2_api, test_v3_from_preset,
-             test_v4_codec, test_v5_requirements_readme, test_v6_layout]
+             test_v4_codec, test_v5_requirements_readme, test_v6_layout,
+             test_v7_license]
     failed = []
     for fn in suite:
         try:

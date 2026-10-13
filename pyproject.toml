@@ -8,6 +8,7 @@ version = "0.1.0"
 description = "TURING-1: arquitectura híbrida conv/atención + MoE fino + MTP en PyTorch puro (base LFM2)"
 readme = "README.md"
 requires-python = ">=3.10"
+license = { text = "Apache-2.0" }
 dependencies = ["torch>=2.4"]
 
 [project.optional-dependencies]

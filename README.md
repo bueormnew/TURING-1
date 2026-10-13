@@ -97,4 +97,4 @@ python tests/test_turing.py tests/test_lfm2.py
 
 - `torch.compile` traza el modelo, pero necesita toolchain C++/CUDA en la
   máquina (no incluido aquí).
-- Licencia pendiente de decisión del autor (dime cuál y la agrego).
+- Licencia Apache-2.0 (ver `LICENSE`).
